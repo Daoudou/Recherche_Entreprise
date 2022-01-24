@@ -9,19 +9,21 @@ import androidx.appcompat.app.AlertDialog
 import retrofit2.Callback
 import retrofit2.Response
 
+
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val svc = EntrepriseService()
-        val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
         findViewById<Button>(R.id.buttonSearch).setOnClickListener{
             val query = findViewById<EditText>(R.id.editTextSearch).text.toString()
+            val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
             val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
             Thread(Runnable {
                 runOnUiThread {
                     progressBar.visibility = View.VISIBLE
-                    listEntreprise.visibility = View.INVISIBLE
+                    listEntreprise.visibility = View.VISIBLE
                 }
                val result = svc.getEntreprise(query)
                 runOnUiThread {
