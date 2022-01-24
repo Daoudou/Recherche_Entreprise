@@ -1,10 +1,6 @@
 package fr.daoudou.re
 
 import android.util.JsonReader
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
 import java.net.URL
@@ -56,6 +52,57 @@ class EntrepriseService {
             return result
         } catch (e: IOException){
             return emptyList()
+        } finally {
+            conn?.disconnect()
+        }
+    }
+
+    fun getEntrepriseInformations(entreprise: Entreprise): EntrepriseInformations? {
+
+        val url = URL(String.format(entrepriseUrl))
+        var conn: HttpsURLConnection? = null
+        try {
+            conn = url.openConnection() as HttpsURLConnection
+            conn.connect()
+            if (conn.responseCode != HttpsURLConnection.HTTP_OK){
+                return null
+            }
+            val inputStreamInformatios = conn.inputStream?: return null
+            val reader = JsonReader(inputStreamInformatios.bufferedReader())
+            val resultInformation = EntrepriseInformations("",
+                "","","",
+                "","")
+            reader.beginObject()
+            while (reader.hasNext()){
+                if (reader.nextName().equals("etablissement")){
+                    reader.beginArray()
+                    while (reader.hasNext()){
+                        reader.beginObject()
+
+                        while(reader.hasNext()){
+                            when(reader.nextName()){
+                                "suggestion" -> break
+                              //  "nom_raison_sociale" -> entrepriseList.nameSocial = reader.nextString()
+                                "libelle_voie" -> resultInformation.libelleVoieEntreprise = reader.nextString()
+                                "departement" -> resultInformation.departementEntreprise = reader.nextString()
+                                "code_postal" -> resultInformation.codePostaleEntreprise = reader.nextString()
+                                "libelle_activite_principale" -> resultInformation.libelleActivitePrincipaleEntreprise = reader.nextString()
+                                "date_creation" -> resultInformation.dateCreationEntreprise = reader.nextString()
+                                "geo_adresse" -> resultInformation.adresseEntreprise = reader.nextString()
+                                else -> reader.skipValue()
+                            }
+
+                        }
+                        reader.endObject()
+                    }
+                    reader.endArray()
+                }
+                else reader.skipValue()
+            }
+            reader.endObject()
+            return resultInformation
+        }catch (e: IOException){
+            return null
         } finally {
             conn?.disconnect()
         }
