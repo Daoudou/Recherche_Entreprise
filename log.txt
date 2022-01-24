@@ -1,0 +1,6 @@
+Commande git status le 24/01/2022 a 10:17:01,31 :
+
+On branch main
+nothing to commit, working tree clean
+
+
