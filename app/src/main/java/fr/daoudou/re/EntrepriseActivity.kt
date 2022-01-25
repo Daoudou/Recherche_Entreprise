@@ -17,6 +17,15 @@ class EntrepriseActivity : AppCompatActivity() {
                 entrepriseInformationsProgressBar.visibility = View.VISIBLE
             }
             runOnUiThread {
+
+                findViewById<TextView>(R.id.textViewNameEntreprise).setText(
+                    String.format(
+                        applicationContext.resources.getString(
+                            R.string.nameEntre),
+                        entrepriseInformations.nameSocial, entrepriseInformations.toString()
+                    )
+                )
+
                 findViewById<TextView>(R.id.textViewlibelleVoie).setText(
                     String.format(
                         applicationContext.resources.getString(R.string.libelle_de_voie),
@@ -27,6 +36,31 @@ class EntrepriseActivity : AppCompatActivity() {
                     String.format(
                         applicationContext.resources.getString(R.string.departement_adresse),
                         entrepriseInformations.departementEntreprise
+                    )
+                )
+                findViewById<TextView>(R.id.textViewLibelleActivity).setText(
+                    String.format(applicationContext.resources.getString(
+                        R.string.libelle_activity),
+                        entrepriseInformations.libelleActivitePrincipaleEntreprise,entrepriseInformations.toString()
+                    )
+                )
+                findViewById<TextView>(R.id.textViewDateCreation).setText(
+                    String.format(applicationContext.resources.getString(
+                        R.string.date_de_creation_entreprise),
+                    entrepriseInformations.dateCreationEntreprise, entrepriseInformations.toString()
+                    )
+                )
+                findViewById<TextView>(R.id.textViewAdresse).setText(
+                    String.format(applicationContext.resources.getString(
+                        R.string.adresse_entreprise),
+                        entrepriseInformations.adresseEntreprise, entrepriseInformations.toString()
+                    )
+                )
+
+                findViewById<TextView>(R.id.textViewCodePostal).setText(
+                    String.format(applicationContext.resources.getString(
+                        R.string.code_postale),
+                        entrepriseInformations.codePostaleEntreprise
                     )
                 )
             }

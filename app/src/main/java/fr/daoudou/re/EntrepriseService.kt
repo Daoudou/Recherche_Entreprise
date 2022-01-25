@@ -58,7 +58,6 @@ class EntrepriseService {
                                                 else reader.skipValue()
                                 else -> reader.skipValue()
                             }
-
                         }
                         result.add(entrepriseList)
                         reader.endObject()
@@ -75,7 +74,3 @@ class EntrepriseService {
         }
     }
 }
-
-/*
-
-*/
