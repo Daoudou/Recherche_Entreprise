@@ -16,8 +16,7 @@ data class Entreprise(  var nameSocial:String
         return nameSocial.compareTo(other.nameSocial)
     }
 
-
-                        }
+}
 
 
 /*var sirenEntreprise:            Long? = null,
