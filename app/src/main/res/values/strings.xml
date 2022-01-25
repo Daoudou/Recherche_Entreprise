@@ -2,4 +2,13 @@
     <string name="app_name">RE</string>
     <string name="buttonSearch">RECHERCHE</string>
     <string name="textviewtest">%s</string>
+    <string name="textViewInformations">Informations sur l"'"entreprise</string>
+    <string name="nameEntre">Nom: %s</string>
+    <string name="libelle_de_voie">Libelle de la voie: %s</string>
+    <string name="departement_adresse">Departement: %s</string>
+    <string name="code_postale">Code postale: %s</string>
+    <string name="libelle_activity">Activite: %s</string>
+    <string name="date_de_creation_entreprise">Date de creation: %s</string>
+    <string name="adresse_entreprise">Adresse: %s</string>
+
 </resources>

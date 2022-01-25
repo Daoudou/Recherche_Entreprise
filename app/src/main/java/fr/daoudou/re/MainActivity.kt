@@ -34,8 +34,6 @@ class MainActivity : AppCompatActivity() {
                     android.R.layout.simple_list_item_1,
                     android.R.id.text1,
                     result)
-                    //findViewById<TextView>(R.id.textViewListContent).setTextColor(R.color.purple_200)
-
                     progressBar.visibility = View.INVISIBLE
                     listEntreprise.visibility = View.VISIBLE
                 }
