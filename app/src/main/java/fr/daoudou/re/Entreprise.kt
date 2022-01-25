@@ -1,17 +1,21 @@
 package fr.daoudou.re
 
 import android.provider.ContactsContract
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.io.Serializable
 import java.util.*
 
-
-data class Entreprise(  var nameSocial:String,var id: Int? = null,
-                        var libelleVoieEntreprise: String? = null,
-                        var departementEntreprise: Int? = null,
-                        var codePostaleEntreprise: Long? = null,
-                        var libelleActivitePrincipaleEntreprise: String? = null,
-                        var dateCreationEntreprise: String? = null,
-                        var adresseEntreprise: String? = null
+@Entity
+data class Entreprise(@PrimaryKey(autoGenerate = true) var siret: Long? = null,
+                      var siren: Long? = null,
+                      var nameSocial:String, var id: Int? = null,
+                      var libelleVoieEntreprise: String? = null,
+                      var departementEntreprise: Int? = null,
+                      var codePostaleEntreprise: Long? = null,
+                      var libelleActivitePrincipaleEntreprise: String? = null,
+                      var dateCreationEntreprise: String? = null,
+                      var adresseEntreprise: String? = null
                         ): Comparable<Entreprise>, Serializable{
 
     override fun toString(): String {
@@ -20,6 +24,18 @@ data class Entreprise(  var nameSocial:String,var id: Int? = null,
 
     override fun compareTo(other: Entreprise): Int {
         return nameSocial.compareTo(other.nameSocial)
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if(this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Entreprise
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return siret.hashCode()
     }
 
 }

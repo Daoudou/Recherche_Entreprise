@@ -18,6 +18,22 @@ class EntrepriseActivity : AppCompatActivity() {
             }
             runOnUiThread {
 
+                findViewById<TextView>(R.id.textViewSiret).setText(
+                    String.format(
+                        applicationContext.resources.getString(
+                            R.string.Siret),
+                        entrepriseInformations.siret
+                    )
+                )
+
+                findViewById<TextView>(R.id.textViewSiren).setText(
+                    String.format(
+                        applicationContext.resources.getString(
+                            R.string.Siren),
+                        entrepriseInformations.siren
+                    )
+                )
+
                 findViewById<TextView>(R.id.textViewNameEntreprise).setText(
                     String.format(
                         applicationContext.resources.getString(
@@ -64,6 +80,7 @@ class EntrepriseActivity : AppCompatActivity() {
                     )
                 )
             }
+            entrepriseInformationsProgressBar.visibility = View.INVISIBLE
         }).start()
     }
 }

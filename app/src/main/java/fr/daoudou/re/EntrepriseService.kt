@@ -33,27 +33,26 @@ class EntrepriseService {
                     reader.beginArray()
                     while (reader.hasNext()) {
                         reader.beginObject()
-                        val entrepriseList = Entreprise("")
+                        val entrepriseList = Entreprise(null,null,"",null,"")
                         while (reader.hasNext()) {
                             when (reader.nextName()) {
+
+                                "siret" -> if (reader.peek()!= JsonToken.NULL) entrepriseList.siret = reader.nextLong()
+                                            else reader.skipValue()
+                                "siren" -> if (reader.peek() != JsonToken.NULL) entrepriseList.siren = reader.nextLong()
+                                            else reader.skipValue()
                                 "nom_raison_sociale" -> if(reader.peek() != JsonToken.NULL) entrepriseList.nameSocial = reader.nextString()
                                                         else reader.skipValue()
-
                                 "libelle_voie" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.libelleVoieEntreprise = reader.nextString()
                                                   else reader.skipValue()
-
                                  "departement" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.departementEntreprise = reader.nextInt()
                                                            else reader.skipValue()
-
                                  "code_postal" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.codePostaleEntreprise = reader.nextLong()
                                                  else reader.skipValue()
-
                                 "libelle_activite_principale" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.libelleActivitePrincipaleEntreprise = reader.nextString()
                                                                 else reader.skipValue()
-
                                 "date_creation" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.dateCreationEntreprise = reader.nextString()
                                                     else reader.skipValue()
-
                                 "geo_adresse" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.adresseEntreprise = reader.nextString()
                                                 else reader.skipValue()
                                 else -> reader.skipValue()

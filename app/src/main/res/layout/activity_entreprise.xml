@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/textViewInformations"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,13 +25,32 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
     <TextView
+        android:id="@+id/textViewSiret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Siret"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarInformations" />
+
+    <TextView
+        android:id="@+id/textViewSiren"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Siren"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSiret" />
+
+
+    <TextView
         android:id="@+id/textViewNameEntreprise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/nameEntre"
-        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBarInformations" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewSiren" />
 
     <TextView
         android:id="@+id/textViewlibelleVoie"
@@ -40,7 +59,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/libelle_de_voie"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNameEntreprise" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDateCreation" />
 
     <TextView
         android:id="@+id/textViewDepartement"
@@ -49,7 +68,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/departement_adresse"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewlibelleVoie" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAdresse" />
 
     <TextView
         android:id="@+id/textViewCodePostal"
@@ -67,7 +86,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/libelle_activity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCodePostal" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewlibelleVoie" />
 
     <TextView
         android:id="@+id/textViewDateCreation"
@@ -76,7 +95,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/date_de_creation_entreprise"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLibelleActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewCodePostal" />
 
     <TextView
         android:id="@+id/textViewAdresse"
@@ -85,7 +104,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/adresse_entreprise"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDateCreation" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewNameEntreprise" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

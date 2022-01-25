@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val svc = EntrepriseService()
+        val db = EntrepriseDatabase.getDatabase(this)
         val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
         findViewById<Button>(R.id.buttonSearch).setOnClickListener{
             val query = findViewById<EditText>(R.id.editTextSearch).text.toString()
