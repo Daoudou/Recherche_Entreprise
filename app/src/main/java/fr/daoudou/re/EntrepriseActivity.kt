@@ -10,6 +10,8 @@ class EntrepriseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entreprise)
+        val db = EntrepriseDatabase.getDatabase(this)
+        val entrepriseAdd = db.entrepriseDao()
         val entrepriseInformations = intent?.extras?.get("entreprise") as? Entreprise ?: return
         val entrepriseInformationsProgressBar = findViewById<ProgressBar>(R.id.progressBarInformations)
         Thread(Runnable {
@@ -17,27 +19,23 @@ class EntrepriseActivity : AppCompatActivity() {
                 entrepriseInformationsProgressBar.visibility = View.VISIBLE
             }
             runOnUiThread {
-
+                entrepriseInformationsProgressBar.visibility = View.INVISIBLE
                 findViewById<TextView>(R.id.textViewSiret).setText(
                     String.format(
-                        applicationContext.resources.getString(
-                            R.string.Siret),
+                        applicationContext.resources.getString(R.string.Siret),
                         entrepriseInformations.siret
                     )
                 )
-
                 findViewById<TextView>(R.id.textViewSiren).setText(
                     String.format(
-                        applicationContext.resources.getString(
-                            R.string.Siren),
+                        applicationContext.resources.getString(R.string.Siren),
                         entrepriseInformations.siren
                     )
                 )
 
                 findViewById<TextView>(R.id.textViewNameEntreprise).setText(
                     String.format(
-                        applicationContext.resources.getString(
-                            R.string.nameEntre),
+                        applicationContext.resources.getString(R.string.nameEntre),
                         entrepriseInformations.nameSocial, entrepriseInformations.toString()
                     )
                 )
@@ -67,20 +65,18 @@ class EntrepriseActivity : AppCompatActivity() {
                     )
                 )
                 findViewById<TextView>(R.id.textViewAdresse).setText(
-                    String.format(applicationContext.resources.getString(
-                        R.string.adresse_entreprise),
+                    String.format(applicationContext.resources.getString(R.string.adresse_entreprise),
                         entrepriseInformations.adresseEntreprise, entrepriseInformations.toString()
                     )
                 )
 
                 findViewById<TextView>(R.id.textViewCodePostal).setText(
-                    String.format(applicationContext.resources.getString(
-                        R.string.code_postale),
+                    String.format(applicationContext.resources.getString(R.string.code_postale),
                         entrepriseInformations.codePostaleEntreprise
                     )
                 )
             }
-            entrepriseInformationsProgressBar.visibility = View.INVISIBLE
         }).start()
+        entrepriseAdd.insert(entrepriseInformations)
     }
 }

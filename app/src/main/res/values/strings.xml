@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">RE</string>
+    <string name="app_name">Recherche Entreprise</string>
     <string name="buttonSearch">RECHERCHE</string>
-    <string name="textviewtest">%s</string>
-    <string name="textViewInformations">Informations sur l"'"entreprise</string>
-    <string name="Siret">Siret: %d</string>
-    <string name="Siren">Siren: %d</string>
+    <string name="textViewInformations">Informations sur l\'\entreprise</string>
+    <string name="Siret">N de Siret: %d</string>
+    <string name="Siren">N de Siren: %d</string>
     <string name="nameEntre">Nom: %s</string>
     <string name="libelle_de_voie">Libelle de la voie: %s</string>
     <string name="departement_adresse">Departement: %d</string>

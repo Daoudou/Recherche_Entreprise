@@ -20,9 +20,6 @@ class MainActivity : AppCompatActivity() {
             val query = findViewById<EditText>(R.id.editTextSearch).text.toString()
             val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
             Thread(Runnable {
-                val db = EntrepriseDatabase.getDatabase(this)
-                val entrepriseAdd = db.entrepriseDao()
-
                 runOnUiThread {
                     progressBar.visibility = View.VISIBLE
                     listEntreprise.visibility = View.VISIBLE
