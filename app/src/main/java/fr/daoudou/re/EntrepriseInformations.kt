@@ -6,5 +6,4 @@ data class EntrepriseInformations(
                         var codePostaleEntreprise: String? = null,
                         var libelleActivitePrincipaleEntreprise: String? = null,
                         var dateCreationEntreprise: String? = null,
-                        var adresseEntreprise: String? = null,
-)
+                        var adresseEntreprise: String? = null)
