@@ -5,7 +5,13 @@ import java.io.Serializable
 import java.util.*
 
 
-data class Entreprise(  var nameSocial:String
+data class Entreprise(  var nameSocial:String,var id: Int? = null,
+                        var libelleVoieEntreprise: String? = null,
+                        var departementEntreprise: Int? = null,
+                        var codePostaleEntreprise: Long? = null,
+                        var libelleActivitePrincipaleEntreprise: String? = null,
+                        var dateCreationEntreprise: String? = null,
+                        var adresseEntreprise: String? = null
                         ): Comparable<Entreprise>, Serializable{
 
     override fun toString(): String {

@@ -1,17 +1,13 @@
 package fr.daoudou.re
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.telecom.Call
 import android.view.View
 import android.view.ViewParent
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
-import retrofit2.Callback
-import retrofit2.Response
-
-
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("ResourceAsColor")
@@ -19,9 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val svc = EntrepriseService()
+        val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
         findViewById<Button>(R.id.buttonSearch).setOnClickListener{
             val query = findViewById<EditText>(R.id.editTextSearch).text.toString()
-            val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
             val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
             Thread(Runnable {
                 runOnUiThread {
@@ -39,6 +35,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }).start()
         }
+        listEntreprise.setOnItemClickListener{_,_,position,_ ->
+            val entreprise = listEntreprise.adapter.getItem(position) as Entreprise
+            val intent = Intent(applicationContext, EntrepriseActivity::class.java)
+            intent.putExtra("entreprise",entreprise)
+            startActivity(intent)
+        }
     }
-
 }

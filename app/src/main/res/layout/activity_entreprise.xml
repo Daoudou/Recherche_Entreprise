@@ -16,21 +16,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ProgressBar
+        android:id="@+id/progressBarInformations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
     <TextView
         android:id="@+id/textViewNameEntreprise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nameEntre"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/progressBarInformations" />
 
     <TextView
         android:id="@+id/textViewlibelleVoie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/libelle_de_voie"
         android:layout_marginTop="20dp"
+        android:text="@string/libelle_de_voie"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNameEntreprise" />
 
@@ -38,8 +46,8 @@
         android:id="@+id/textViewDepartement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/departement_adresse"
         android:layout_marginTop="20dp"
+        android:text="@string/departement_adresse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewlibelleVoie" />
 
@@ -47,8 +55,8 @@
         android:id="@+id/textViewCodePostal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/code_postale"
         android:layout_marginTop="20dp"
+        android:text="@string/code_postale"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDepartement" />
 
@@ -56,8 +64,8 @@
         android:id="@+id/textViewLibelleActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/libelle_activity"
         android:layout_marginTop="20dp"
+        android:text="@string/libelle_activity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCodePostal" />
 
@@ -65,8 +73,8 @@
         android:id="@+id/textViewDateCreation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/date_de_creation_entreprise"
         android:layout_marginTop="20dp"
+        android:text="@string/date_de_creation_entreprise"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLibelleActivity" />
 
@@ -74,8 +82,8 @@
         android:id="@+id/textViewAdresse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/adresse_entreprise"
         android:layout_marginTop="20dp"
+        android:text="@string/adresse_entreprise"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDateCreation" />
 
