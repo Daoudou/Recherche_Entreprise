@@ -9,6 +9,8 @@ import androidx.room.RoomDatabase
 @Database(version = 1, entities = [Entreprise::class])
 abstract class EntrepriseDatabase : RoomDatabase() {
 
+    abstract fun entrepriseDao(): EntrepriseDAO
+
     companion object{
         var INSTANCE: EntrepriseDatabase? = null
 
