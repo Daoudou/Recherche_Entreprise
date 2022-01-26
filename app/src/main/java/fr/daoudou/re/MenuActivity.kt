@@ -27,7 +27,6 @@ class MenuActivity : AppCompatActivity() {
             AlertDialog.Builder(this).apply {
                 setMessage("Chargement de l'historique")
             }.create().show()
-
             val intent = Intent(this,History::class.java)
             startActivity(intent)
         }
