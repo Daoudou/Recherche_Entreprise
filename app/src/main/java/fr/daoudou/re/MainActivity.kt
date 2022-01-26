@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val svc = EntrepriseService()
         val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
-        findViewById<Button>(R.id.buttonSearch).setOnClickListener{
+        findViewById<ImageButton>(R.id.buttonSearch).setOnClickListener{
             val query = findViewById<EditText>(R.id.editTextSearch).text.toString()
             val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
             Thread(Runnable {

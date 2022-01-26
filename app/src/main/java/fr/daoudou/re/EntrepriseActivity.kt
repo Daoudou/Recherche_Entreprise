@@ -69,7 +69,6 @@ class EntrepriseActivity : AppCompatActivity() {
                         entrepriseInformations.adresseEntreprise, entrepriseInformations.toString()
                     )
                 )
-
                 findViewById<TextView>(R.id.textViewCodePostal).setText(
                     String.format(applicationContext.resources.getString(R.string.code_postale),
                         entrepriseInformations.codePostaleEntreprise
@@ -77,6 +76,8 @@ class EntrepriseActivity : AppCompatActivity() {
                 )
             }
         }).start()
-        entrepriseAdd.insert(entrepriseInformations)
+        if(entrepriseInformations.siret?.let { entrepriseAdd.getBySiret(it) } == null){
+            entrepriseAdd.insert(entrepriseInformations)
+        }
     }
 }

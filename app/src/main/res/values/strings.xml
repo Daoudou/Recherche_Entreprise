@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">Recherche Entreprise</string>
-    <string name="buttonSearch">RECHERCHE</string>
+
+    <!---->
+    <string name="buttonSearchMenu">RECHERCHE</string>
+    <string name="textViewMenu">Menu</string>
+    <string name="buttonHistoryMenu">Historique</string>
+
+
+    <!---->
     <string name="textViewInformations">Informations sur l\'\entreprise</string>
+    <string name="textViewHistory">Historique de recherche</string>
+
+    <!---->
     <string name="Siret">N de Siret: %d</string>
     <string name="Siren">N de Siren: %d</string>
     <string name="nameEntre">Nom: %s</string>
