@@ -41,12 +41,17 @@ class MainActivity : AppCompatActivity() {
             val entredb1 = entredb.entrepriseDao()
             entredb1.getByPosition(position)
 
-
-
-            val entreprise = listEntreprise.adapter.getItem(position) as Entreprise
-            val intent = Intent(applicationContext, EntrepriseActivity::class.java)
-            intent.putExtra("entreprise",entreprise)
-            startActivity(intent)
+            val entreprise1 = listEntreprise.adapter.getItem(position) as Entreprise
+           // if(entredb1.getBySiret(entreprise1.siret!!)== null){
+                //val entreprise = listEntreprise.adapter.getItem(position) as Entreprise
+                val intent = Intent(applicationContext, EntrepriseActivity::class.java)
+                intent.putExtra("entreprise",entreprise1)
+                startActivity(intent)
+           // }else{
+              //  val intentCache = Intent(applicationContext, Cache::class.java)
+             //   intentCache.putExtra("entrepriseCache",entreprise1)
+              //  startActivity(intentCache)
+           // }
         }
 
     }

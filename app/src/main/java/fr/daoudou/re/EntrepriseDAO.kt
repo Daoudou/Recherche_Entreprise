@@ -13,7 +13,7 @@ interface EntrepriseDAO {
     fun getAll() : List<Entreprise>
 
     @Query("SELECT * FROM Entreprise ORDER BY entreprise.siret = :siret ")
-    fun getBySiret(siret: Long) : Entreprise
+    fun getBySiret(siret: Long) : Entreprise?
 
     @Query("SELECT * FROM Entreprise ORDER BY entreprise.nameSocial LIMIT 1 OFFSET :position ")
     fun getByPosition(position: Int) :Entreprise

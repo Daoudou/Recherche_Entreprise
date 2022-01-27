@@ -76,8 +76,7 @@ class EntrepriseActivity : AppCompatActivity() {
                 )
             }
         }).start()
-
-        if(entrepriseInformations.siret?.let { entrepriseAdd.getBySiret(it) } == null){
+        if( entrepriseAdd.getBySiret(entrepriseInformations.siret!!) == null){
             entrepriseAdd.insert(entrepriseInformations)
         }
     }

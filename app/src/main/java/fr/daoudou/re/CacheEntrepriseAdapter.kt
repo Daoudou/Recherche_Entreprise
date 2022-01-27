@@ -24,7 +24,7 @@ class CacheEntrepriseAdapter(val context: Context,
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+       return entrepriseDAO.getCount()
     }
 
 

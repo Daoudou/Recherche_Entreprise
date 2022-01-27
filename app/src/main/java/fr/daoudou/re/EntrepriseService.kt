@@ -28,7 +28,7 @@ class EntrepriseService {
             val reader = JsonReader(inputStream.bufferedReader())
             val result = mutableListOf<Entreprise>()
             reader.beginObject()
-            while (reader.hasNext()) {
+            while (reader.hasNext()){
                 if (reader.nextName().equals("etablissement")) {
                     reader.beginArray()
                     while (reader.hasNext()) {
@@ -36,7 +36,6 @@ class EntrepriseService {
                         val entrepriseList = Entreprise(null,null,"",null,"")
                         while (reader.hasNext()) {
                             when (reader.nextName()) {
-
                                 "siret" -> if (reader.peek()!= JsonToken.NULL) entrepriseList.siret = reader.nextLong()
                                 else {reader.skipValue(); "Non renseigne"}
 

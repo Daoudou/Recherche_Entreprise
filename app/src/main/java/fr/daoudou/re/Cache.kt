@@ -12,7 +12,9 @@ class Cache : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_cache)
+        setContentView(R.layout.cache)
+
+        val entrepriseInformations = intent?.extras?.get("entrepriseCache") as? Entreprise ?: return
 
         val db = EntrepriseDatabase.getDatabase(this)
 
