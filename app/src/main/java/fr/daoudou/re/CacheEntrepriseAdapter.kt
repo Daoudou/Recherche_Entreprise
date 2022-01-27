@@ -20,6 +20,11 @@ class CacheEntrepriseAdapter(val context: Context,
 
         val cache = entrepriseDAO.getByPosition(position)
         holder.textNameCache.setText(String.format("Nom : %s", cache.nameSocial))
+        holder.textAdresseCache.setText(String.format("Nom : %s", cache.adresseEntreprise))
+        holder.textSiretCache.setText(String.format("Nom : %s", cache.siret))
+        holder.textSirenCache.setText(String.format("Nom : %s", cache.siren))
+        holder.textDepartementCache.setText(String.format("Nom : %s", cache.departementEntreprise))
+        holder.textDateCache.setText(String.format("Nom : %s", cache.dateCreationEntreprise))
 
     }
 

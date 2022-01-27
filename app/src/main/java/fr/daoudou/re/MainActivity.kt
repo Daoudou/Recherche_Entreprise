@@ -8,15 +8,23 @@ import android.telecom.Call
 import android.view.View
 import android.view.ViewParent
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val db = EntrepriseDatabase.getDatabase(this)
+        val entrepriseAdd = db.entrepriseDao()
         val svc = EntrepriseService()
         val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
         findViewById<ImageButton>(R.id.buttonSearch).setOnClickListener{
+
+            AlertDialog.Builder(this).apply {
+                setMessage("Chargement de la recherche")
+            }.create().show()
+
             val query = findViewById<EditText>(R.id.editTextSearch).text.toString()
             val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
             Thread(Runnable {
@@ -41,18 +49,23 @@ class MainActivity : AppCompatActivity() {
             val entredb1 = entredb.entrepriseDao()
             entredb1.getByPosition(position)
 
-            val entreprise1 = listEntreprise.adapter.getItem(position) as Entreprise
-           // if(entredb1.getBySiret(entreprise1.siret!!)== null){
-                //val entreprise = listEntreprise.adapter.getItem(position) as Entreprise
-                val intent = Intent(applicationContext, EntrepriseActivity::class.java)
-                intent.putExtra("entreprise",entreprise1)
-                startActivity(intent)
-           // }else{
-              //  val intentCache = Intent(applicationContext, Cache::class.java)
-             //   intentCache.putExtra("entrepriseCache",entreprise1)
-              //  startActivity(intentCache)
-           // }
-        }
+            val entreprise = listEntreprise.adapter.getItem(position) as Entreprise
 
-    }
-}
+            if (entredb1.getBySiret(entreprise.siret!!) != null){
+
+                entredb1.getByPosition(position)
+                val intent = Intent(applicationContext, Cache::class.java)
+                intent.putExtra("entrepriseCache",entreprise)
+                startActivity(intent)
+
+            } else {
+                val intent = Intent(applicationContext, EntrepriseActivity::class.java)
+                intent.putExtra("entreprise",entreprise)
+                startActivity(intent)
+                entrepriseAdd.insert(entreprise)
+            }
+
+
+            }
+        }
+ }

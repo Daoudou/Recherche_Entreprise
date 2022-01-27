@@ -10,8 +10,7 @@ class EntrepriseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entreprise)
-        val db = EntrepriseDatabase.getDatabase(this)
-        val entrepriseAdd = db.entrepriseDao()
+
         val entrepriseInformations = intent?.extras?.get("entreprise") as? Entreprise ?: return
         val entrepriseInformationsProgressBar = findViewById<ProgressBar>(R.id.progressBarInformations)
         Thread(Runnable {
@@ -19,6 +18,7 @@ class EntrepriseActivity : AppCompatActivity() {
                 entrepriseInformationsProgressBar.visibility = View.VISIBLE
             }
             runOnUiThread {
+
                 entrepriseInformationsProgressBar.visibility = View.INVISIBLE
                 findViewById<TextView>(R.id.textViewSiret).setText(
                     String.format(
@@ -76,8 +76,6 @@ class EntrepriseActivity : AppCompatActivity() {
                 )
             }
         }).start()
-        if( entrepriseAdd.getBySiret(entrepriseInformations.siret!!) == null){
-            entrepriseAdd.insert(entrepriseInformations)
-        }
+
     }
 }
