@@ -9,7 +9,7 @@
         android:id="@+id/textViewCacheTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textViewInformations"
+        android:text="@string/textViewInformationsCache"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -36,10 +36,18 @@ class MainActivity : AppCompatActivity() {
             }).start()
         }
         listEntreprise.setOnItemClickListener{_,_,position,_ ->
+
+            val entredb = EntrepriseDatabase.getDatabase(this)
+            val entredb1 = entredb.entrepriseDao()
+            entredb1.getByPosition(position)
+
+
+
             val entreprise = listEntreprise.adapter.getItem(position) as Entreprise
             val intent = Intent(applicationContext, EntrepriseActivity::class.java)
             intent.putExtra("entreprise",entreprise)
             startActivity(intent)
         }
+
     }
 }

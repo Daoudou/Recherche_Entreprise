@@ -1,16 +1,18 @@
 package fr.daoudou.re
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class History : AppCompatActivity() {
+class Cache : AppCompatActivity() {
+
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_entreprise_informations)
+
+        setContentView(R.layout.activity_cache)
 
         val db = EntrepriseDatabase.getDatabase(this)
 
@@ -18,9 +20,9 @@ class History : AppCompatActivity() {
         val recyclerViewHistory = findViewById<RecyclerView>(R.id.recyclerViewHistory)
 
         recyclerViewHistory.layoutManager = LinearLayoutManager(this)
-        recyclerViewHistory.adapter = HistoryAdapter(this,entreAdd)
+        recyclerViewHistory.adapter = CacheEntrepriseAdapter(this,entreAdd)
 
-        (recyclerViewHistory.adapter as HistoryAdapter).notifyDataSetChanged()
+        (recyclerViewHistory.adapter as CacheEntrepriseAdapter).notifyDataSetChanged()
 
     }
 

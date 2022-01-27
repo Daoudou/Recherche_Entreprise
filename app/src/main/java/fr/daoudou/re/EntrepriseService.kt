@@ -38,23 +38,32 @@ class EntrepriseService {
                             when (reader.nextName()) {
 
                                 "siret" -> if (reader.peek()!= JsonToken.NULL) entrepriseList.siret = reader.nextLong()
-                                            else reader.skipValue()
+                                else {reader.skipValue(); "Non renseigne"}
+
                                 "siren" -> if (reader.peek() != JsonToken.NULL) entrepriseList.siren = reader.nextLong()
-                                            else reader.skipValue()
+                                else {reader.skipValue(); "Non renseigne"}
+
                                 "nom_raison_sociale" -> if(reader.peek() != JsonToken.NULL) entrepriseList.nameSocial = reader.nextString()
-                                                        else reader.skipValue()
+                                else {reader.skipValue(); "Non renseigne"}
+
                                 "libelle_voie" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.libelleVoieEntreprise = reader.nextString()
-                                                  else reader.skipValue()
+                                else {reader.skipValue(); "Non renseigne"}
+
                                  "departement" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.departementEntreprise = reader.nextInt()
-                                                           else reader.skipValue()
+                                 else {reader.skipValue(); "Non renseigne"}
+
                                  "code_postal" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.codePostaleEntreprise = reader.nextLong()
-                                                 else reader.skipValue()
+                                 else {reader.skipValue(); "Non renseigne"}
+
                                 "libelle_activite_principale" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.libelleActivitePrincipaleEntreprise = reader.nextString()
-                                                                else reader.skipValue()
+                                else {reader.skipValue(); "Non renseigne"}
+
                                 "date_creation" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.dateCreationEntreprise = reader.nextString()
-                                                    else reader.skipValue()
+                                else {reader.skipValue(); "Non renseigne"}
+
                                 "geo_adresse" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.adresseEntreprise = reader.nextString()
-                                                else reader.skipValue()
+                                else {reader.skipValue(); "Non renseigne"}
+
                                 else -> reader.skipValue()
                             }
                         }

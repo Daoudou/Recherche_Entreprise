@@ -9,6 +9,8 @@
 
     <!---->
     <string name="textViewInformations">Informations sur l\'\entreprise</string>
+    <string name="textViewInformationsCache">Informations sur l\'\entreprise (cache)</string>
+
     <string name="textViewHistory">Historique de recherche</string>
 
     <!---->
