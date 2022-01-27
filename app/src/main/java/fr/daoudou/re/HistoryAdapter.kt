@@ -16,18 +16,6 @@ class HistoryAdapter (val context: Context,
 
         val entre = entrepriseDAO.getByPosition(position)
 
-        holder.textName.setText(String.format("Nom : %s",entre.nameSocial))
-        holder.textSiret.setText(String.format("Siret: %d",entre.siret))
-        holder.textSiren.setText(String.format("Siren: %d",entre.siren))
-        holder.textLibelleVoie.setText(String.format("Libelle de la voie: %s",entre.libelleVoieEntreprise))
-        holder.textDepartement.setText(String.format("Departement: %d",entre.departementEntreprise))
-        holder.textCodePostale.setText(String.format("Code postal : %d",entre.codePostaleEntreprise))
-        holder.textActivite.setText(String.format("Activite : %s",entre.libelleActivitePrincipaleEntreprise))
-        holder.textDate.setText(String.format("Date: %s",entre.dateCreationEntreprise))
-        holder.textAdresse.setText(String.format("Adresse: %s",entre.adresseEntreprise))
-
-
-
     }
 
 

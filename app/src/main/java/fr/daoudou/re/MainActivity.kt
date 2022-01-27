@@ -25,8 +25,17 @@ class MainActivity : AppCompatActivity() {
                 setMessage("Chargement de la recherche")
             }.create().show()
 
-            val query = findViewById<EditText>(R.id.editTextSearch).text.toString()
+            var query = findViewById<EditText>(R.id.editTextSearch).text.toString()
             val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
+
+            if (findViewById<RadioButton>(R.id.radioButtonPostal).isActivated){
+                query = "$query?code_postal=" + findViewById<EditText>(R.id.editTextPostal).text.toString()
+            } else if ( findViewById<RadioButton>(R.id.radioButtonDepartement).isActivated){
+                query = "$query?departement=" + findViewById<EditText>(R.id.editTextDepartement).text.toString()
+            }else{
+                query = "$query?"
+            }
+
             Thread(Runnable {
                 runOnUiThread {
                     progressBar.visibility = View.VISIBLE
@@ -50,20 +59,10 @@ class MainActivity : AppCompatActivity() {
             entredb1.getByPosition(position)
 
             val entreprise = listEntreprise.adapter.getItem(position) as Entreprise
-
-            if (entredb1.getBySiret(entreprise.siret!!) != null){
-
-                entredb1.getByPosition(position)
-                val intent = Intent(applicationContext, Cache::class.java)
-                intent.putExtra("entrepriseCache",entreprise)
-                startActivity(intent)
-
-            } else {
                 val intent = Intent(applicationContext, EntrepriseActivity::class.java)
                 intent.putExtra("entreprise",entreprise)
                 startActivity(intent)
                 entrepriseAdd.insert(entreprise)
-            }
 
 
             }

@@ -15,21 +15,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextPostal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="15"
         android:layout_marginTop="20dp"
+        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextDepartement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="15"
+        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPostal" />
 
     <ImageButton
         android:id="@+id/buttonSearch"
@@ -49,10 +51,12 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextSearch">
 
         <RadioButton
+            android:id="@+id/radioButtonPostal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
+            android:id="@+id/radioButtonDepartement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -64,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDepartement" />
 
     <ProgressBar
         android:id="@+id/progressbarSearch"
