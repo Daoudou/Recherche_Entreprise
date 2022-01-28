@@ -26,7 +26,7 @@ class MenuActivity : AppCompatActivity() {
             AlertDialog.Builder(this).apply {
                 setMessage("Application quitter")
             }.create().show()
-            closeContextMenu()
+            System.exit(1)
         }
     }
 }

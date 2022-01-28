@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 query = "$query?code_postal=" + findViewById<EditText>(R.id.editTextPostal).text.toString()
             } else if ( findViewById<RadioButton>(R.id.radioButtonDepartement).isActivated){
                 query = "$query?departement=" + findViewById<EditText>(R.id.editTextDepartement).text.toString()
-            }else{
+            } else{
                 query = "$query?"
             }
 

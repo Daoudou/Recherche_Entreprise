@@ -32,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Code postal :"
+        android:textColor="@color/black"
         android:layout_marginTop="35dp"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
@@ -45,6 +46,16 @@
         android:layout_marginTop="25dp"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/textVIEWpostal" />
+
+    <TextView
+        android:id="@+id/textViewNAF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAF :"
+        android:textColor="@color/black"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="@+id/textVIEWpostal"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDepartement" />
 
     <EditText
         android:id="@+id/editTextSearch"
@@ -74,6 +85,17 @@
         app:layout_constraintStart_toEndOf="@+id/textViewDepartement"
         app:layout_constraintTop_toBottomOf="@+id/editTextPostal" />
 
+    <EditText
+        android:id="@+id/editTextNAFE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="12"
+        android:inputType="number"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewNAF"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDepartement" />
+
+
     <ImageButton
         android:id="@+id/buttonSearch"
         android:layout_width="wrap_content"
@@ -101,6 +123,10 @@
             android:id="@+id/radioButtonDepartement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/radioButtonNAF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </RadioGroup>
 
@@ -110,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDepartement" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 
 
