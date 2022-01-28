@@ -6,31 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textviewsEarchTtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recherche d'entreprise :"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textVIEWpostal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Code postal :"
+        android:layout_marginTop="35dp"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
+
+    <TextView
+        android:id="@+id/textViewDepartement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Departement :"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/textVIEWpostal" />
+
     <EditText
         android:id="@+id/editTextSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="12"
+        android:ems="16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textviewsEarchTtitle" />
 
     <EditText
         android:id="@+id/editTextPostal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="15"
         android:layout_marginTop="20dp"
+        android:ems="12"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintStart_toEndOf="@+id/textVIEWpostal"
         app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
 
     <EditText
         android:id="@+id/editTextDepartement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="15"
+        android:ems="12"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintStart_toEndOf="@+id/textViewDepartement"
         app:layout_constraintTop_toBottomOf="@+id/editTextPostal" />
 
     <ImageButton

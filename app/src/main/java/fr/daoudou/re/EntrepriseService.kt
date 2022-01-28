@@ -11,7 +11,7 @@ class EntrepriseService {
 
     private val serverUrl = "https://entreprise.data.gouv.fr"
     private val apiUrl = "$serverUrl/api/sirene"
-    private val entrepriseUrl = "$apiUrl/v1/full_text/%s"
+    private val entrepriseUrl = "$apiUrl/v1/full_text/%s&per_page=100"
 
     fun getEntreprise(query: String): List<Entreprise> {
 
@@ -48,7 +48,7 @@ class EntrepriseService {
                                 "libelle_voie" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.libelleVoieEntreprise = reader.nextString()
                                 else {reader.skipValue(); "Non renseigne"}
 
-                                 "departement" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.departementEntreprise = reader.nextInt()
+                                 "departement" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.departementEntreprise = reader.nextString()
                                  else {reader.skipValue(); "Non renseigne"}
 
                                  "code_postal" -> if (reader.peek() !== JsonToken.NULL) entrepriseList.codePostaleEntreprise = reader.nextLong()

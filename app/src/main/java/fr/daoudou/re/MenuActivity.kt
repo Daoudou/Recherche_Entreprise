@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
 class MenuActivity : AppCompatActivity() {
@@ -27,7 +26,7 @@ class MenuActivity : AppCompatActivity() {
             AlertDialog.Builder(this).apply {
                 setMessage("Chargement de l'historique")
             }.create().show()
-            val intent = Intent(this,History::class.java)
+            val intent = Intent(this,HistoryActivity::class.java)
             startActivity(intent)
         }
     }

@@ -18,7 +18,7 @@
     <string name="Siren">N de Siren: %d</string>
     <string name="nameEntre">Nom: %s</string>
     <string name="libelle_de_voie">Libelle de la voie: %s</string>
-    <string name="departement_adresse">Departement: %d</string>
+    <string name="departement_adresse">Departement: %s</string>
     <string name="code_postale">Code postale: %d</string>
     <string name="libelle_activity">Activite: %s</string>
     <string name="date_de_creation_entreprise">Date de creation: %s</string>

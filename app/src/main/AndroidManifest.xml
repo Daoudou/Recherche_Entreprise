@@ -21,7 +21,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".History"
+            android:name=".HistoryActivity"
             android:exported="false" />
         <activity
             android:name=".EntrepriseActivity"

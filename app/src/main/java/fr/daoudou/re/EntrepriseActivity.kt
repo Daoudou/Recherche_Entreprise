@@ -49,7 +49,7 @@ class EntrepriseActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.textViewDepartement).setText(
                     String.format(
                         applicationContext.resources.getString(R.string.departement_adresse),
-                        entrepriseInformations.departementEntreprise
+                        entrepriseInformations.departementEntreprise, entrepriseInformations.toString()
                     )
                 )
                 findViewById<TextView>(R.id.textViewLibelleActivity).setText(
