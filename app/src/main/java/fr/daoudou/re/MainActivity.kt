@@ -21,9 +21,6 @@ class MainActivity : AppCompatActivity() {
         val historydb = db.historyDao()
         val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
         findViewById<ImageButton>(R.id.buttonSearch).setOnClickListener{
-            AlertDialog.Builder(this).apply {
-                setMessage("Chargement de la recherche")
-            }.create().show()
 
             var query = findViewById<EditText>(R.id.editTextSearch).text.toString()
           //  val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
@@ -56,6 +53,10 @@ class MainActivity : AppCompatActivity() {
             historydb.insert(historDo)
         }
         listEntreprise.setOnItemClickListener{_,_,position,_ ->
+
+            AlertDialog.Builder(this).apply {
+                setMessage("Chargement de la recherche")
+            }.create().show()
 
             val entredb = EntrepriseDatabase.getDatabase(this)
             val entredb1 = entredb.entrepriseDao()

@@ -28,12 +28,5 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this,HistoryActivity::class.java)
             startActivity(intent)
         }
-
-        findViewById<Button>(R.id.buttonQuittMenu).setOnClickListener {
-            AlertDialog.Builder(this).apply {
-                setMessage("Application quitter")
-            }.create().show()
-            System.exit(1)
-        }
     }
 }
