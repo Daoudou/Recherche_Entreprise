@@ -16,11 +16,9 @@ class MenuActivity : AppCompatActivity() {
             AlertDialog.Builder(this).apply {
                 setMessage("Chargement de la page de recherche")
             }.create().show()
-
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
         findViewById<Button>(R.id.buttonHistoryMenu).setOnClickListener {
 
             AlertDialog.Builder(this).apply {
