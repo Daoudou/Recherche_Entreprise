@@ -20,13 +20,12 @@ class MainActivity : AppCompatActivity() {
         val svc = EntrepriseService()
         val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
         findViewById<ImageButton>(R.id.buttonSearch).setOnClickListener{
-
             AlertDialog.Builder(this).apply {
                 setMessage("Chargement de la recherche")
             }.create().show()
 
             var query = findViewById<EditText>(R.id.editTextSearch).text.toString()
-            val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
+          //  val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
 
             if (findViewById<RadioButton>(R.id.radioButtonPostal).isActivated){
                 query = "$query?code_postal=" + findViewById<EditText>(R.id.editTextPostal).text.toString()
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
             Thread(Runnable {
                 runOnUiThread {
-                    progressBar.visibility = View.VISIBLE
+                    //progressBar.visibility = View.INVISIBLE
                     listEntreprise.visibility = View.VISIBLE
                 }
                val result = svc.getEntreprise(query)
@@ -47,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                     android.R.layout.simple_list_item_1,
                     android.R.id.text1,
                     result)
-                    progressBar.visibility = View.INVISIBLE
+                    //progressBar.visibility = View.INVISIBLE
                     listEntreprise.visibility = View.VISIBLE
                 }
             }).start()
@@ -65,5 +64,14 @@ class MainActivity : AppCompatActivity() {
 
 
             }
+
+        findViewById<Button>(R.id.retour).setOnClickListener {
+            val intentRetour = Intent(applicationContext, MenuActivity::class.java)
+            startActivity(intentRetour)
         }
+
+        }
+
+
+
  }

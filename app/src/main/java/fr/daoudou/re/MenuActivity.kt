@@ -24,10 +24,9 @@ class MenuActivity : AppCompatActivity() {
         findViewById<Button>(R.id.buttonHistoryMenu).setOnClickListener {
 
             AlertDialog.Builder(this).apply {
-                setMessage("Chargement de l'historique")
+                setMessage("Application quitter")
             }.create().show()
-            val intent = Intent(this,HistoryActivity::class.java)
-            startActivity(intent)
+            closeContextMenu()
         }
     }
 }

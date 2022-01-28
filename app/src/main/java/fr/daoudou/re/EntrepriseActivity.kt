@@ -1,8 +1,10 @@
 package fr.daoudou.re
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 
@@ -77,5 +79,9 @@ class EntrepriseActivity : AppCompatActivity() {
             }
         }).start()
 
+        findViewById<Button>(R.id.infosRetour).setOnClickListener {
+            val intentRetour = Intent(applicationContext, MainActivity::class.java)
+            startActivity(intentRetour)
+        }
     }
 }
