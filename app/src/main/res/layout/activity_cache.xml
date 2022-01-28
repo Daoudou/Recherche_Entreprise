@@ -12,6 +12,7 @@
         android:text="@string/textViewInformationsCache"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,6 +32,7 @@
         android:text="@string/Siret"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBarCacheInformations" />
 
@@ -41,6 +43,7 @@
         android:text="@string/Siren"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCacheSiret" />
 
@@ -52,6 +55,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="@string/nameEntre"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCacheSiren" />
 
@@ -62,6 +66,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="@string/libelle_de_voie"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCacheDateCreation" />
 
@@ -72,6 +77,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="@string/departement_adresse"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCacheAdresse" />
 
@@ -82,6 +88,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="@string/code_postale"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCacheDepartement" />
 
@@ -92,6 +99,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="@string/libelle_activity"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCachelibelleVoie" />
 
@@ -102,6 +110,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="@string/date_de_creation_entreprise"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCacheCodePostal" />
 
@@ -112,6 +121,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:text="@string/adresse_entreprise"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewNameCacheEntreprise" />
 

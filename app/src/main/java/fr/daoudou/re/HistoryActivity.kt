@@ -15,10 +15,11 @@ class HistoryActivity : AppCompatActivity() {
         val db = EntrepriseDatabase.getDatabase(this)
 
         val entreAdd = db.entrepriseDao()
+        val history = db.historyDao()
         val recyclerViewHistory = findViewById<RecyclerView>(R.id.recyclerViewHistory)
 
         recyclerViewHistory.layoutManager = LinearLayoutManager(this)
-        recyclerViewHistory.adapter = HistoryAdapter(this,entreAdd)
+        recyclerViewHistory.adapter = HistoryAdapter(this,history)
 
         (recyclerViewHistory.adapter as HistoryAdapter).notifyDataSetChanged()
 

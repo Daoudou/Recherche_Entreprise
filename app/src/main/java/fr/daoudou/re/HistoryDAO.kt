@@ -1,12 +1,14 @@
 package fr.daoudou.re
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 
+@Dao
 interface HistoryDAO {
 
     @Query("SELECT * FROM History ORDER BY history.search ")
-    fun getAll()
+    fun getAll() : List<History>
 
     @Query("SELECT COUNT(*) FROM HISTORY")
     fun getCount():Int

@@ -5,8 +5,15 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textViewHistoryDate"
+        android:text="@string/historyDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
         android:id="@+id/textViewHistory"
         android:text="@string/nameEntre"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

@@ -4,6 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
+import java.time.LocalDateTime
 
 class HistoryAdapter (val context: Context,
                       private val historyDAO: HistoryDAO
@@ -17,6 +19,8 @@ class HistoryAdapter (val context: Context,
         val hisotry = historyDAO.getByPosition(position)
 
         holder.textName.text = hisotry.search
+
+        //holder.textDate.text = SimpleDateFormat("dd/MM/yyy").format(cacheRequete.dateRequete).toString()
 
 
     }
