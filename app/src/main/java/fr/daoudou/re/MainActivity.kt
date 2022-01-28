@@ -53,11 +53,6 @@ class MainActivity : AppCompatActivity() {
             historydb.insert(historDo)
         }
         listEntreprise.setOnItemClickListener{_,_,position,_ ->
-
-            AlertDialog.Builder(this).apply {
-                setMessage("Chargement de la recherche")
-            }.create().show()
-
             val entredb = EntrepriseDatabase.getDatabase(this)
             val entredb1 = entredb.entrepriseDao()
             entredb1.getByPosition(position)
