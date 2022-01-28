@@ -27,9 +27,9 @@ class MainActivity : AppCompatActivity() {
             var query = findViewById<EditText>(R.id.editTextSearch).text.toString()
           //  val progressBar = findViewById<ProgressBar>(R.id.progressbarSearch)
 
-            if (findViewById<RadioButton>(R.id.radioButtonPostal).isActivated){
+            if (findViewById<RadioButton>(R.id.radioButtonPostal).isChecked){
                 query = "$query?code_postal=" + findViewById<EditText>(R.id.editTextPostal).text.toString()
-            } else if ( findViewById<RadioButton>(R.id.radioButtonDepartement).isActivated){
+            } else if ( findViewById<RadioButton>(R.id.radioButtonDepartement).isChecked){
                 query = "$query?departement=" + findViewById<EditText>(R.id.editTextDepartement).text.toString()
             } else{
                 query = "$query?"

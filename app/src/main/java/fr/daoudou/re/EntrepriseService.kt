@@ -11,7 +11,7 @@ class EntrepriseService {
 
     private val serverUrl = "https://entreprise.data.gouv.fr"
     private val apiUrl = "$serverUrl/api/sirene"
-    private val entrepriseUrl = "$apiUrl/v1/full_text/%s?"
+    private val entrepriseUrl = "$apiUrl/v1/full_text/%s&per_page=100"
 
     fun getEntreprise(query: String): List<Entreprise> {
 
