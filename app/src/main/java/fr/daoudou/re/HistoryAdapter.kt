@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class HistoryAdapter (val context: Context,
-                      private val entrepriseDAO: EntrepriseDAO
+                      private val historyDAO: HistoryDAO
                       ) : RecyclerView.Adapter<HistoryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
         return HistoryViewHolder(LayoutInflater.from(context).inflate(R.layout.listrow,parent,false))
@@ -14,13 +14,16 @@ class HistoryAdapter (val context: Context,
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
 
-        val entre = entrepriseDAO.getByPosition(position)
+        val hisotry = historyDAO.getByPosition(position)
+
+        holder.textName.text = hisotry.search
+
 
     }
 
 
     override fun getItemCount(): Int {
-        return entrepriseDAO.getCount()
+        return historyDAO.getCount()
     }
 
 
