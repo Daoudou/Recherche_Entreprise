@@ -4,6 +4,7 @@
     <!---->
     <string name="buttonSearchMenu">RECHERCHE</string>
     <string name="textViewMenu">Menu</string>
+    <string name="buttonHistoryMenu">HISTORIQUE</string>
     <string name="buttonQuitteMenu">Quitter</string>
 
 

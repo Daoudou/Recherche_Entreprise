@@ -19,7 +19,6 @@ class HistoryAdapter (val context: Context,
         val hisotry = historyDAO.getByPosition(position)
 
         holder.textName.text = hisotry.search
-
         //holder.textDate.text = SimpleDateFormat("dd/MM/yyy").format(cacheRequete.dateRequete).toString()
 
 

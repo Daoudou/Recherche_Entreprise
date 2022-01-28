@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         val db = EntrepriseDatabase.getDatabase(this)
         val entrepriseAdd = db.entrepriseDao()
         val svc = EntrepriseService()
+        val historydb = db.historyDao()
         val listEntreprise = findViewById<ListView>(R.id.listeViewSearch)
         findViewById<ImageButton>(R.id.buttonSearch).setOnClickListener{
             AlertDialog.Builder(this).apply {
@@ -48,8 +49,11 @@ class MainActivity : AppCompatActivity() {
                     result)
                     //progressBar.visibility = View.INVISIBLE
                     listEntreprise.visibility = View.VISIBLE
+
                 }
             }).start()
+            val historDo = History(search = query)
+            historydb.insert(historDo)
         }
         listEntreprise.setOnItemClickListener{_,_,position,_ ->
 

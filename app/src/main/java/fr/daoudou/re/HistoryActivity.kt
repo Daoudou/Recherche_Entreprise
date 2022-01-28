@@ -10,7 +10,7 @@ class HistoryActivity : AppCompatActivity() {
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_entreprise_informations)
+        setContentView(R.layout.activity_entreprise_historique)
 
         val db = EntrepriseDatabase.getDatabase(this)
 
@@ -20,8 +20,8 @@ class HistoryActivity : AppCompatActivity() {
 
         recyclerViewHistory.layoutManager = LinearLayoutManager(this)
         recyclerViewHistory.adapter = HistoryAdapter(this,history)
-
         (recyclerViewHistory.adapter as HistoryAdapter).notifyDataSetChanged()
+
 
     }
 

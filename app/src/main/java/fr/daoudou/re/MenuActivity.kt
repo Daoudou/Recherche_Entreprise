@@ -19,8 +19,17 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
         findViewById<Button>(R.id.buttonHistoryMenu).setOnClickListener {
 
+            AlertDialog.Builder(this).apply {
+                setMessage("Chargement de l'historique")
+            }.create().show()
+            val intent = Intent(this,HistoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.buttonQuittMenu).setOnClickListener {
             AlertDialog.Builder(this).apply {
                 setMessage("Application quitter")
             }.create().show()
